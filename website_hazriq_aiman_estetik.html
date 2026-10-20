@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>Hazriq Aiman — Personal Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#090e1b;--panel:#111a2c;--panel2:#151f34;--text:#f4f7fb;--muted:#a4b0c5;--blue:#8bd5ff;--cyan:#8cf0e0;--line:rgba(255,255,255,.1);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}button,input{font:inherit}
+.nav{position:sticky;top:0;z-index:10;background:rgba(9,14,27,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.navin{max-width:1150px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}.logo{font:800 1.1rem Manrope,sans-serif;letter-spacing:-.7px}.logo span{color:var(--blue)}.links{display:flex;gap:23px;flex-wrap:wrap;color:#c5d0e1;font-size:.88rem}.links a:hover{color:var(--blue)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,rgba(53,131,196,.22),transparent 35%),radial-gradient(ellipse at 15% 85%,rgba(62,207,190,.11),transparent 30%),linear-gradient(130deg,#0b1020,#101a2d 58%,#102a3d)}.hero:before{content:"";position:absolute;width:580px;height:580px;border:1px solid rgba(139,213,255,.1);border-radius:50%;right:-220px;top:-300px;box-shadow:0 0 0 55px rgba(139,213,255,.025),0 0 0 110px rgba(139,213,255,.02)}
+.heroin{max-width:1150px;margin:auto;padding:88px 24px 105px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:65px;position:relative}.kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:2.7px;font-weight:700;color:var(--cyan)}h1{font:800 clamp(2.8rem,6vw,5.2rem)/1.04 Manrope,sans-serif;letter-spacing:-3.5px;margin:20px 0}h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));background-clip:text;color:transparent}.hero p{color:#bdc9db;max-width:600px;font-size:1.04rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;font-weight:700;font-size:.9rem;transition:.2s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(110deg,var(--blue),var(--cyan));color:#091421}.secondary{border:1px solid rgba(255,255,255,.2);color:#edf6ff}
+.photo-wrap{position:relative;max-width:360px;width:100%;justify-self:center}.photo-frame{aspect-ratio:4/5;border-radius:34px;overflow:hidden;background:linear-gradient(145deg,#203b55,#172035);border:1px solid rgba(139,213,255,.45);box-shadow:0 30px 90px rgba(0,0,0,.32);position:relative}.photo-frame img{width:100%;height:100%;object-fit:cover;display:none}.photo-placeholder{height:100%;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;color:#c5d8ea}.photo-placeholder .icon{font-size:4rem;margin-bottom:10px}.photo-placeholder strong{font:700 1.1rem Manrope}.photo-placeholder small{color:#8fa7bf;margin-top:7px}.photo-upload{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);white-space:nowrap;border:1px solid rgba(255,255,255,.2);background:rgba(8,16,29,.86);color:#fff;padding:10px 14px;border-radius:999px;cursor:pointer;font-size:.8rem;font-weight:700}.photo-upload:hover{background:#203a53}.float{position:absolute;background:#17253a;border:1px solid var(--line);padding:10px 14px;border-radius:14px;box-shadow:0 14px 35px #0004;font-size:.82rem;font-weight:700}.float.one{top:28px;left:-30px}.float.two{bottom:54px;right:-28px}
+main{max-width:1150px;margin:-28px auto 0;padding:0 24px;position:relative;z-index:2}.section{background:linear-gradient(145deg,rgba(20,30,49,.98),rgba(14,22,37,.98));border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,4vw,42px);margin-bottom:20px;box-shadow:0 18px 50px rgba(0,0,0,.12)}.heading{display:flex;gap:15px;align-items:flex-start;margin-bottom:27px}.symbol{width:49px;height:49px;flex:0 0 49px;border-radius:16px;display:grid;place-items:center;background:rgba(139,213,255,.12);font-size:1.35rem}.heading h2{font:750 clamp(1.45rem,3vw,1.9rem) Manrope;margin:0;letter-spacing:-.8px}.heading p{color:var(--muted);margin:4px 0 0;font-size:.92rem}.bio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.item{padding:16px 18px;border-radius:15px;background:rgba(255,255,255,.025);border:1px solid var(--line);min-width:0}.label{font-size:.74rem;color:#91a4bd;text-transform:uppercase;letter-spacing:1px;font-weight:700}.value{font-weight:650;overflow-wrap:anywhere;margin-top:4px}
+.timeline{margin-left:7px;padding-left:28px;position:relative}.timeline:before{content:"";position:absolute;left:4px;top:9px;bottom:10px;width:2px;background:linear-gradient(var(--blue),var(--cyan))}.entry{position:relative;padding:0 0 26px}.entry:last-child{padding-bottom:0}.entry:before{content:"";position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(139,213,255,.1)}.entry h3,.card h3{margin:0 0 5px;font:700 1.05rem Manrope}.entry p,.card p,.achievement p,.hobby p{color:var(--muted);margin:0;font-size:.94rem}.tag{display:inline-block;margin-top:9px;padding:4px 10px;border-radius:999px;background:rgba(139,213,255,.1);color:var(--blue);font-size:.76rem;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{padding:23px;border-radius:19px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:rgba(139,213,255,.35)}.cardicon{font-size:1.6rem;margin-bottom:15px;width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:rgba(174,154,255,.13)}
+.achievement{display:flex;gap:18px;padding:23px;border-radius:19px;background:linear-gradient(120deg,rgba(139,213,255,.08),rgba(140,240,224,.05));border:1px solid rgba(139,213,255,.17)}.achievement .medal{font-size:2rem}.achievement h3,.hobby h3{margin:0 0 6px;font:700 1.08rem Manrope}
+.hobby{display:flex;align-items:center;gap:20px;padding:23px;border-radius:19px;background:linear-gradient(110deg,rgba(140,240,224,.08),rgba(139,213,255,.06));border:1px solid var(--line)}.fish{font-size:2.6rem}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.gallery-item{min-height:150px;border-radius:17px;overflow:hidden;position:relative;background:linear-gradient(135deg,#1d3049,#132235);border:1px dashed rgba(139,213,255,.3);display:flex;align-items:center;justify-content:center;text-align:center;color:#9fb4ca;padding:16px}.gallery-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}.gallery-item span{position:relative;z-index:1;font-size:.86rem}.gallery-item.filled span{display:none}
+.gallery-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px}.gallery-tools p{margin:0;color:var(--muted);font-size:.88rem}.mini-btn{border:1px solid rgba(139,213,255,.35);background:rgba(139,213,255,.08);color:var(--blue);border-radius:999px;padding:9px 14px;font-weight:700;cursor:pointer}
+footer{text-align:center;padding:36px 24px 42px;color:#9aa9bd;font-size:.85rem}footer strong{color:var(--blue)}footer .sub{font-size:.76rem;color:#6f8097;margin-top:5px}
+@media(max-width:760px){.navin{align-items:flex-start;flex-direction:column;padding:14px 20px;gap:10px}.links{gap:13px;font-size:.8rem}.heroin{grid-template-columns:1fr;gap:38px;padding:63px 24px 78px}.photo-wrap{max-width:280px}.float.one{left:-12px}.float.two{right:-12px}h1{letter-spacing:-2px}.bio,.cards{grid-template-columns:1fr}main{padding:0 14px}.section{border-radius:20px}.gallery{grid-template-columns:1fr 1fr}.gallery-item{min-height:130px}}
+@media(max-width:420px){.gallery{grid-template-columns:1fr}.gallery-item{min-height:170px}.links{gap:10px}.links a{font-size:.76rem}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="logo" href="#utama">HAZRIQ<span>✳</span></a>
+  <nav class="links" aria-label="Navigasi">
+    <a href="#biodata">Biodata</a><a href="#pendidikan">Pendidikan</a><a href="#pengalaman">Pengalaman</a><a href="#pencapaian">Pencapaian</a><a href="#galeri">Galeri</a>
+  </nav>
+</div></header>
+
+<section class="hero" id="utama"><div class="heroin">
+  <div>
+    <div class="kicker">Portfolio peribadi · 2026</div>
+    <h1>Mohamad<br><span>Hazriq Aiman.</span></h1>
+    <p>Hai, selamat datang ke laman peribadi saya. Saya berasal dari Kuantan, Pahang. Saya pernah mendalami bidang automotif sebelum menyambung pengajian dalam bidang kesihatan persekitaran. Bagi saya, setiap pengalaman ada ilmu yang boleh dibawa ke langkah seterusnya.</p>
+    <div class="actions"><a class="btn primary" href="#biodata">Kenali saya <span>↗</span></a><a class="btn secondary" href="#pendidikan">Lihat perjalanan saya</a></div>
+  </div>
+  <div class="photo-wrap">
+    <div class="photo-frame">
+      <img id="profileImage" alt="Gambar profil Mohamad Hazriq Aiman">
+      <div class="photo-placeholder" id="profilePlaceholder"><div class="icon">✦</div><strong>Gambar profil awak</strong><small>Tekan butang di bawah untuk masukkan gambar</small></div>
+      <label class="photo-upload" for="profileInput">＋ Masukkan gambar diri</label>
+      <input id="profileInput" type="file" accept="image/*" hidden>
+    </div>
+    <div class="float one">✧ Terus belajar</div><div class="float two">⌖ Kuantan, Pahang</div>
+  </div>
+</div></section>
+
+<main>
+<section class="section" id="biodata">
+  <div class="heading"><div class="symbol">✦</div><div><h2>Kenali Saya</h2><p>Serba sedikit tentang diri saya.</p></div></div>
+  <div class="bio">
+    <div class="item"><div class="label">Nama penuh</div><div class="value">Mohamad Hazriq Aiman bin Jeffri</div></div>
+    <div class="item"><div class="label">Umur</div><div class="value">20 tahun</div></div>
+    <div class="item"><div class="label">Tempat asal</div><div class="value">Kuantan, Pahang</div></div>
+    <div class="item"><div class="label">Pengajian sekarang</div><div class="value">PPKP · ILKKM Sungai Buloh</div></div>
+  </div>
+</section>
+
+<section class="section" id="pendidikan">
+  <div class="heading"><div class="symbol" style="background:rgba(140,240,224,.12)">🎓</div><div><h2>Perjalanan Pendidikan</h2><p>Setiap tempat mengajar saya sesuatu yang baharu.</p></div></div>
+  <div class="timeline">
+    <div class="entry"><h3>ILKKM Sungai Buloh</h3><p>Sekarang saya menyambung pengajian dalam kursus Penolong Pegawai Kesihatan Persekitaran (PPKP). Saya berharap dapat menambah pengetahuan dan kemahiran dalam bidang kesihatan persekitaran.</p><span class="tag">Pengajian sekarang</span></div>
+    <div class="entry"><h3>IKM TSYA, Pekan, Pahang</h3><p>Selepas tamat SPM, saya menyambung pengajian TVET dalam bidang Automotif Body Repair dan berjaya mengikuti latihan sehingga SKM Tahap 3.</p></div>
+    <div class="entry"><h3>SMK Paya Besar</h3><p>Saya meneruskan persekolahan menengah di sini sehingga tamat Sijil Pelajaran Malaysia (SPM).</p></div>
+    <div class="entry"><h3>SK Kg Belukar</h3><p>Di sinilah saya memulakan perjalanan pendidikan di peringkat sekolah rendah.</p></div>
+  </div>
+</section>
+
+<section class="section" id="pengalaman">
+  <div class="heading"><div class="symbol" style="background:rgba(190,166,255,.13)">🧰</div><div><h2>Pengalaman Kerja</h2><p>Pengalaman bekerja memberi saya peluang belajar melalui kerja sebenar.</p></div></div>
+  <div class="cards">
+    <article class="card"><div class="cardicon">🚘</div><h3>Car Detailing</h3><p>Selepas tamat SPM, saya pernah bekerja dalam bidang car detailing. Melalui kerja ini, saya mendapat pengalaman dalam penjagaan, pembersihan dan memastikan kenderaan kelihatan kemas.</p></article>
+    <article class="card"><div class="cardicon">🔧</div><h3>Body Repair</h3><p>Saya juga pernah bekerja dalam bidang body repair. Pengalaman ini memberi saya pendedahan kepada kerja pembaikan badan kenderaan dan menambahkan minat saya terhadap bidang automotif.</p></article>
+  </div>
+</section>
+
+<section class="section" id="pencapaian">
+  <div class="heading"><div class="symbol" style="background:rgba(255,204,112,.13)">🏆</div><div><h2>Pencapaian</h2><p>Satu pengalaman yang bermakna dalam perjalanan kemahiran saya.</p></div></div>
+  <div class="achievement"><div class="medal">🏅</div><div><h3>WorldSkills Malaysia</h3><p>Saya pernah menyertai pertandingan WorldSkills Malaysia. Penyertaan ini menjadi pengalaman berharga kerana saya berpeluang mencabar diri, menguji kemahiran dan belajar daripada pengalaman dalam bidang yang saya ceburi.</p></div></div>
+</section>
+
+<section class="section" id="hobi">
+  <div class="heading"><div class="symbol" style="background:rgba(140,240,224,.12)">🎣</div><div><h2>Hobi</h2><p>Aktiviti yang saya suka buat pada masa lapang.</p></div></div>
+  <div class="hobby"><div class="fish">🎣</div><div><h3>Memancing</h3><p>Saya minat memancing kerana dapat berehat, menikmati suasana luar dan meluangkan masa dengan tenang apabila ada kelapangan.</p></div></div>
+</section>
+
+<section class="section" id="galeri">
+  <div class="heading"><div class="symbol" style="background:rgba(139,213,255,.12)">▧</div><div><h2>Galeri Saya</h2><p>Masukkan gambar yang berkaitan supaya portfolio ini lebih hidup dan menggambarkan pengalaman awak.</p></div></div>
+  <div class="gallery-tools"><p>Cadangan: gambar automotif, pertandingan dan aktiviti memancing.</p><label class="mini-btn" for="galleryInput">＋ Tambah gambar galeri</label><input id="galleryInput" type="file" accept="image/*" multiple hidden></div>
+  <div class="gallery" id="gallery">
+    <div class="gallery-item"><span>📷<br>Gambar aktiviti automotif</span></div>
+    <div class="gallery-item"><span>🏆<br>Gambar WorldSkills Malaysia</span></div>
+    <div class="gallery-item"><span>🎣<br>Gambar hobi memancing</span></div>
+  </div>
+</section>
+</main>
+<footer><div>Dihasilkan oleh <strong>Mohamad Hazriq Aiman bin Jeffri</strong></div><div class="sub">Terus belajar. Terus berkembang. Terus melangkah.</div></footer>
+<script>
+const profileInput=document.getElementById('profileInput');
+profileInput.addEventListener('change',e=>{
+  const file=e.target.files && e.target.files[0]; if(!file)return;
+  const reader=new FileReader(); reader.onload=ev=>{
+    const img=document.getElementById('profileImage'); img.src=ev.target.result; img.style.display='block';
+    document.getElementById('profilePlaceholder').style.display='none';
+  }; reader.readAsDataURL(file);
+});
+document.getElementById('galleryInput').addEventListener('change',e=>{
+  const files=Array.from(e.target.files||[]); const gallery=document.getElementById('gallery');
+  files.forEach(file=>{
+    if(!file.type.startsWith('image/'))return;
+    const reader=new FileReader(); reader.onload=ev=>{
+      const item=document.createElement('div'); item.className='gallery-item filled';
+      const img=document.createElement('img'); img.src=ev.target.result; img.alt='Gambar galeri peribadi'; img.style.display='block';
+      item.appendChild(img); gallery.appendChild(item);
+    }; reader.readAsDataURL(file);
+  });
+  e.target.value='';
+});
+</script>
+</body>
+</html>
